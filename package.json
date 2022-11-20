@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Prebuilt CSS Styles",
   "scripts": {
-    "build": "rimraf css && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
-    "build-sass": "node-sass --output-style expanded src/index.scss ./css/index.css",
-    "build-autoprefix": "postcss --use autoprefixer --map --output ./css/index.css ./css/index.css",
-    "build-cleancss": "cleancss -o ./css/index.min.css ./css/index.css"
+    "build": "rimraf dist && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-sass": "node-sass --output-style expanded src/index.scss ./dist/index.css",
+    "build-autoprefix": "postcss --use autoprefixer --map --output ./dist/index.css ./dist/index.css",
+    "build-cleancss": "cleancss -o ./dist/index.min.css ./dist/index.css"
   },
   "keywords": [
     "css",
