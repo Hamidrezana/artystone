@@ -1,0 +1,27 @@
+.eclipse-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+}
+
+.text-justify-center {
+  text-align: justify;
+  text-align-last: center;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: block;
+  }
+  &::-webkit-scrollbar {
+    display: block;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

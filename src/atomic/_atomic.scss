@@ -1,0 +1,285 @@
+$classes: (
+  'display': (
+    'hasMediaQuery': true,
+    'prefix': 'd',
+    'props': (
+      block,
+      inline-block,
+      inline-flex,
+      inline-grid,
+      list-item,
+      none,
+      table,
+      inline,
+      flex,
+      grid,
+    ),
+  ),
+  'text-align': (
+    'hasMediaQuery': true,
+    'prefix': 'text',
+    'props': (
+      left,
+      right,
+      center,
+      revert,
+    ),
+  ),
+  'justify-content': (
+    'hasMediaQuery': true,
+    'prefix': 'justify',
+    'props': (
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'start': flex-start,
+      'end': flex-end,
+    ),
+  ),
+  'align-items': (
+    'hasMediaQuery': true,
+    'prefix': 'align-items',
+    'props': (
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'start': flex-start,
+      'end': flex-end,
+      'stretch': stretch,
+    ),
+  ),
+  'justify-items': (
+    'hasMediaQuery': true,
+    'prefix': 'justify-items',
+    'props': (
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'start': flex-start,
+      'end': flex-end,
+    ),
+  ),
+  'align-content': (
+    'hasMediaQuery': true,
+    'prefix': 'align',
+    'props': (
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'start': flex-start,
+      'end': flex-end,
+    ),
+  ),
+  'align-self': (
+    'hasMediaQuery': true,
+    'prefix': 'align-self',
+    'props': (
+      'center': center,
+      'start': flex-start,
+      'end': flex-end,
+    ),
+  ),
+  'flex-basis': (
+    'hasMediaQuery': true,
+    'prefix': 'f-basis',
+    'props': (
+      auto,
+      initial,
+      inherit,
+    ),
+  ),
+  'flex-direction': (
+    'hasMediaQuery': true,
+    'prefix': 'flex',
+    'props': (
+      row,
+      row-reverse,
+      column,
+      column-reverse,
+      initial,
+      inherit,
+    ),
+  ),
+  'flex-grow': (
+    'hasMediaQuery': true,
+    'prefix': 'f-grow',
+    'props': (
+      initial,
+      inherit,
+      0,
+      1,
+      2,
+      3,
+    ),
+  ),
+  'flex-shrink': (
+    'hasMediaQuery': true,
+    'prefix': 'f-shrink',
+    'props': (
+      initial,
+      inherit,
+      0,
+      1,
+      2,
+      3,
+    ),
+  ),
+  'flex-wrap': (
+    'hasMediaQuery': true,
+    'prefix': 'f-wrap',
+    'props': (
+      nowrap,
+      wrap,
+      wrap-reverse,
+      initial,
+      inherit,
+    ),
+  ),
+  'position': (
+    'prefix': 'pos',
+    'props': (
+      absolute,
+      relative,
+      fixed,
+      static,
+      sticky,
+      initial,
+      inherit,
+      unset,
+    ),
+  ),
+  'flex': (
+    'prefix': 'flex',
+    'hasMediaQuery': true,
+    'props': (
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+    ),
+  ),
+  'order': (
+    'prefix': 'order',
+    'hasMediaQuery': true,
+    'props': (
+      1,
+      2,
+      3,
+      4,
+      5,
+    ),
+  ),
+  'border-radius': (
+    'prefix': 'radius',
+    'props': (
+      'none': 0,
+      'sm': 5px,
+      'md': 12px,
+      'lg': 20px,
+      'xl': 30px,
+      'rounded': 50%,
+    ),
+  ),
+  'width': (
+    'prefix': 'w',
+    'hasMediaQuery': true,
+    'props': (
+      '50': 50%,
+      '100': 100%,
+      'max-content': max-content,
+    ),
+  ),
+  'min-width': (
+    'prefix': 'min-w',
+    'props': (
+      '50': 50%,
+      '100': 100%,
+    ),
+  ),
+  'height': (
+    'prefix': 'h',
+    'hasMediaQuery': true,
+    'props': (
+      '50': 50%,
+      '100': 100%,
+    ),
+  ),
+  'overflow': (
+    'prefix': 'overflow',
+    'hasMediaQuery': true,
+    'props': (
+      hidden,
+      scroll,
+      auto,
+    ),
+  ),
+  'overflow-y': (
+    'prefix': 'overflow-y',
+    'hasMediaQuery': true,
+    'props': (
+      hidden,
+      scroll,
+      auto,
+    ),
+  ),
+  'overflow-x': (
+    'prefix': 'overflow-x',
+    'hasMediaQuery': true,
+    'props': (
+      hidden,
+      scroll,
+      auto,
+      visible,
+    ),
+  ),
+  'white-space': (
+    'prefix': 'white-space',
+    'hasMediaQuery': true,
+    'props': (
+      nowrap,
+    ),
+  ),
+  'box-shadow': (
+    'prefix': 'shadow',
+    'props': (
+      'sm': 0px 4px 14px rgba(162, 162, 162, 0.35),
+    ),
+  ),
+);
+
+@each $keyClass, $ValueClass in $classes {
+  @each $label, $value in map-get($ValueClass, 'props') {
+    .#{map-get($ValueClass, 'prefix')}-#{$label} {
+      @each $keyProperty in $keyClass {
+        @if $value {
+          #{$keyProperty}: $value;
+        } @else {
+          #{$keyProperty}: $label;
+        }
+      }
+    }
+  }
+  @if (map-get($ValueClass, 'hasMediaQuery')) {
+    @each $key, $size in $breakpoints {
+      @media screen and (min-width: $size) {
+        @each $label, $value in map-get($ValueClass, 'props') {
+          .#{map-get($ValueClass, 'prefix')}-#{$key}-#{$label} {
+            @each $keyProperty in $keyClass {
+              @if $value {
+                #{$keyProperty}: $value;
+              } @else {
+                #{$keyProperty}: $label;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

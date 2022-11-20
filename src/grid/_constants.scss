@@ -1,0 +1,24 @@
+$grid-gutter-width: 1rem;
+$grid-gutter-height: 1rem;
+$include-column-box-sizing: true;
+$variable-prefix: g-;
+$grid-columns: 12;
+$grid-row-columns: 6;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+$gutters: $spacers;
