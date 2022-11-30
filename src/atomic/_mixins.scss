@@ -1,0 +1,23 @@
+@mixin generate-styles($props, $prefix, $keyClass) {
+  @each $label, $value in $props {
+    .#{$prefix}-#{$label} {
+      @each $keyProperty in $keyClass {
+        @if $value {
+          #{$keyProperty}: $value;
+        } @else {
+          #{$keyProperty}: $label;
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-classes($props, $prefix, $keyClass) {
+  @if (is-list($prefix)) {
+    @each $prefix-label in $prefix {
+      @include generate-styles($props, $prefix-label, $keyClass);
+    }
+  } @else {
+    @include generate-styles($props, $prefix, $keyClass);
+  }
+}
