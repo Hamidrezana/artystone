@@ -3,26 +3,56 @@
 
 @each $keyClass, $ValueClass in $classes {
   @each $label, $value in map-get($ValueClass, 'props') {
-    .#{map-get($ValueClass, 'prefix')}-#{$label} {
-      @each $keyProperty in $keyClass {
-        @if $value {
-          #{$keyProperty}: $value;
-        } @else {
-          #{$keyProperty}: $label;
+    $prefix: map-get($ValueClass, 'prefix');
+    @if is-list($prefix) {
+      @each $prefix-label, $prefix-value in $prefix {
+        .#{$prefix-label}-#{$label} {
+          @each $keyProperty in $keyClass {
+            @if $value {
+              #{$keyProperty}: $value;
+            } @else {
+              #{$keyProperty}: $label;
+            }
+          }
+        }
+      }
+    } @else {
+      .#{$prefix}-#{$label} {
+        @each $keyProperty in $keyClass {
+          @if $value {
+            #{$keyProperty}: $value;
+          } @else {
+            #{$keyProperty}: $label;
+          }
         }
       }
     }
   }
-  @if (map-get($ValueClass, 'hasMediaQuery')) {
+  @if (map-get($ValueClass, 'has-media-query')) {
     @each $key, $size in $breakpoints {
       @media screen and (min-width: $size) {
         @each $label, $value in map-get($ValueClass, 'props') {
-          .#{map-get($ValueClass, 'prefix')}-#{$key}-#{$label} {
-            @each $keyProperty in $keyClass {
-              @if $value {
-                #{$keyProperty}: $value;
-              } @else {
-                #{$keyProperty}: $label;
+          $prefix: map-get($ValueClass, 'prefix');
+          @if (is-list($prefix)) {
+            @each $prefix-label, $prefix-value in $prefix {
+              .#{$prefix-label}-#{$key}-#{$label} {
+                @each $keyProperty in $keyClass {
+                  @if $value {
+                    #{$keyProperty}: $value;
+                  } @else {
+                    #{$keyProperty}: $label;
+                  }
+                }
+              }
+            }
+          } @else {
+            .#{$prefix}-#{$key}-#{$label} {
+              @each $keyProperty in $keyClass {
+                @if $value {
+                  #{$keyProperty}: $value;
+                } @else {
+                  #{$keyProperty}: $label;
+                }
               }
             }
           }
