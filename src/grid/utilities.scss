@@ -40,11 +40,11 @@
   @return $result;
 }
 
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
+@function breakpoint-min($name, $grid-breakpoints: $breakpoints) {
+  $min: map-get($grid-breakpoints, $name);
   @return if($min != 0, $min, null);
 }
 
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+@function breakpoint-infix($name, $grid-breakpoints: $breakpoints) {
+  @return if(breakpoint-min($name, $grid-breakpoints) == null, '', '-#{$name}');
 }

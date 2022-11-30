@@ -1,6 +1,6 @@
-@import './constants';
-@import './mixins';
-@import './utilities';
+@import './constants.scss';
+@import './mixins.scss';
+@import './utilities.scss';
 
 .row {
   @include make-row();

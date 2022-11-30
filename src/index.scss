@@ -1,3 +1,5 @@
-@import './constants/index.scss';
-@import './atomic/index.scss';
-@import './grid/index.scss';
+@import './variables';
+@import './atomic/atomic';
+@import './grid/grid';
+@import './animation/animation';
+@import './spacing/spacing';

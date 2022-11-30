@@ -1,5 +1,5 @@
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
+@mixin media-breakpoint-up($name, $grid-breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $grid-breakpoints);
   @if $min {
     @media (min-width: $min) {
       @content;
@@ -64,12 +64,12 @@
 @mixin make-grid-columns(
   $columns: $grid-columns,
   $gutter: $grid-gutter-width,
-  $breakpoints: $grid-breakpoints
+  $grid-breakpoints: $breakpoints
 ) {
-  @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
       .col#{$infix} {
         flex: 1 0 0%;
       }
