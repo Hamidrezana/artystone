@@ -1,6 +1,6 @@
 {
   "name": "@hamidrezana/artystone",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Prebuilt CSS Styles",
   "scripts": {
     "build": "rimraf dist && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
