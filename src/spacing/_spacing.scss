@@ -39,7 +39,8 @@ $spaces: (
   37,
   38,
   39,
-  40
+  40,
+  72
 );
 $sides: (end, start);
 $direction: (
@@ -48,8 +49,8 @@ $direction: (
   'b': 'bottom',
   't': 'top',
 );
-@each $space in $spaces {
-  @each $key, $value in $direction {
+@each $key, $value in $direction {
+  @each $space in $spaces {
     .m#{$key}-#{$space} {
       margin-#{$value}: $space * 4px;
     }
@@ -57,46 +58,49 @@ $direction: (
       padding-#{$value}: $space * 4px;
     }
   }
-  @each $side in $sides {
-    .m#{str-slice($side, 0, 1)}-#{$space} {
-      margin-inline-#{$side}: $space * 4px;
+  @each $space in $spaces {
+    @each $side in $sides {
+      .m#{str-slice($side, 0, 1)}-#{$space} {
+        margin-inline-#{$side}: $space * 4px;
+      }
+      .p#{str-slice($side, 0, 1)}-#{$space} {
+        padding-inline-#{$side}: $space * 4px;
+      }
     }
-    .p#{str-slice($side, 0, 1)}-#{$space} {
-      padding-inline-#{$side}: $space * 4px;
+  }
+  @each $space in $spaces {
+    .mx-#{$space} {
+      margin-left: $space * 4px;
+      margin-right: $space * 4px;
     }
-  }
+    .my-#{$space} {
+      margin-top: $space * 4px;
+      margin-bottom: $space * 4px;
+    }
+    .px-#{$space} {
+      padding-left: $space * 4px;
+      padding-right: $space * 4px;
+    }
+    .py-#{$space} {
+      padding-top: $space * 4px;
+      padding-bottom: $space * 4px;
+    }
+    .m-#{$space} {
+      margin: $space * 4px;
+    }
+    .p-#{$space} {
+      padding: $space * 4px;
+    }
 
-  .mx-#{$space} {
-    margin-left: $space * 4px;
-    margin-right: $space * 4px;
-  }
-  .my-#{$space} {
-    margin-top: $space * 4px;
-    margin-bottom: $space * 4px;
-  }
-  .px-#{$space} {
-    padding-left: $space * 4px;
-    padding-right: $space * 4px;
-  }
-  .py-#{$space} {
-    padding-top: $space * 4px;
-    padding-bottom: $space * 4px;
-  }
-  .m-#{$space} {
-    margin: $space * 4px;
-  }
-  .p-#{$space} {
-    padding: $space * 4px;
-  }
-
-  .gp-#{$space} {
-    gap: $space * 4px;
+    .gp-#{$space} {
+      gap: $space * 4px;
+    }
   }
 }
 
-@each $space in $spaces {
+@each $keyBreakPoint, $size in $breakpoints {
   @each $key, $value in $direction {
-    @each $keyBreakPoint, $size in $breakpoints {
+    @each $space in $spaces {
       @media (min-width: $size) {
         .m#{$key}-#{$keyBreakPoint}-#{$space} {
           margin-#{$value}: $space * 4px;
@@ -107,21 +111,23 @@ $direction: (
       }
     }
   }
-  @each $side in $sides {
-    @each $keyBreakPoint, $size in $breakpoints {
-      @media (min-width: $size) {
-        .m#{str-slice($side, 0, 1)}-#{$keyBreakPoint}-#{$space} {
-          margin-inline-#{$side}: $space * 4px;
-        }
+  @each $keyBreakPoint, $size in $breakpoints {
+    @each $side in $sides {
+      @each $space in $spaces {
+        @media (min-width: $size) {
+          .m#{str-slice($side, 0, 1)}-#{$keyBreakPoint}-#{$space} {
+            margin-inline-#{$side}: $space * 4px;
+          }
 
-        .p#{str-slice($side, 0, 1)}-#{$keyBreakPoint}-#{$space} {
-          padding-inline-#{$side}: $space * 4px;
+          .p#{str-slice($side, 0, 1)}-#{$keyBreakPoint}-#{$space} {
+            padding-inline-#{$side}: $space * 4px;
+          }
         }
       }
     }
   }
 
-  @each $keyBreakPoint, $size in $breakpoints {
+  @each $space in $spaces {
     @media (min-width: $size) {
       .mx-#{$keyBreakPoint}-#{$space} {
         margin-left: $space * 4px;

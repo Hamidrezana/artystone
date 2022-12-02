@@ -17,10 +17,26 @@
   }
 }
 
+@keyframes half-rotating {
+  0%,
+  25%,
+  100% {
+    transform: rotate(180deg);
+  }
+  50%,
+  75% {
+    transform: rotate(360deg);
+  }
+}
+
 .rotating-animation {
   animation: rotating 2s linear infinite;
 }
 
 .slide-animation {
   animation: slide 2s linear infinite;
+}
+
+.half-rotating-animation {
+  animation: half-rotating 5s linear infinite;
 }

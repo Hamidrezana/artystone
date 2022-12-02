@@ -1,6 +1,10 @@
 @mixin generate-styles($props, $prefix, $keyClass) {
   @each $label, $value in $props {
-    .#{$prefix}-#{$label} {
+    $class-name: #{$label};
+    @if $prefix {
+      $class-name: #{$prefix}-#{$label};
+    }
+    .#{$class-name} {
       @each $keyProperty in $keyClass {
         @if $value {
           #{$keyProperty}: $value;

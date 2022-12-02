@@ -22,6 +22,7 @@ $classes: (
       left,
       right,
       center,
+      start,
       revert,
     ),
   ),
@@ -165,6 +166,8 @@ $classes: (
       3,
       4,
       5,
+      6,
+      7,
     ),
   ),
   'order': (
@@ -183,7 +186,7 @@ $classes: (
     'props': (
       'none': 0,
       'sm': 5px,
-      'md': 12px,
+      'md': 16px,
       'lg': 20px,
       'xl': 30px,
       'rounded': 50%,
@@ -191,11 +194,19 @@ $classes: (
   ),
   'width': (
     'prefix': 'w',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       '50': 50%,
       '100': 100%,
       'max-content': max-content,
+      'fit-content': fit-content,
+    ),
+  ),
+  'max-width': (
+    'prefix': 'max-w',
+    'props': (
+      '50': 50%,
+      '100': 100%,
     ),
   ),
   'min-width': (
@@ -211,6 +222,11 @@ $classes: (
     'props': (
       '50': 50%,
       '100': 100%,
+    ),
+  ),
+  'cursor': (
+    'props': (
+      pointer,
     ),
   ),
   'overflow': (
@@ -246,6 +262,16 @@ $classes: (
     'has-media-query': true,
     'props': (
       nowrap,
+    ),
+  ),
+  'z-index': (
+    'prefix': 'zIndex',
+    'hasMediaQuery': true,
+    'props': (
+      0,
+      1,
+      2,
+      3,
     ),
   ),
   'box-shadow': (
