@@ -183,6 +183,7 @@ $classes: (
   ),
   'border-radius': (
     'prefix': 'radius',
+    'has-media-query': true,
     'props': (
       'none': 0,
       'sm': 5px,
@@ -194,7 +195,7 @@ $classes: (
   ),
   'width': (
     'prefix': 'w',
-    'hasMediaQuery': true,
+    'has-media-query': true,
     'props': (
       '50': 50%,
       '100': 100%,
@@ -266,7 +267,7 @@ $classes: (
   ),
   'z-index': (
     'prefix': 'zIndex',
-    'hasMediaQuery': true,
+    'has-media-query': true,
     'props': (
       0,
       1,
