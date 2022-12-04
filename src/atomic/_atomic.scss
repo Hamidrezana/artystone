@@ -8,10 +8,8 @@
   $has-media-query: map-get($ValueClass, 'has-media-query');
   @include generate-classes($props, $prefix, $keyClass);
   @if ($has-media-query) {
-    @each $key, $size in $breakpoints {
-      @media screen and (min-width: $size) {
-        @include generate-classes($props, $prefix, $keyClass);
-      }
+    @include generate-breakpoints {
+      @include generate-classes($props, $prefix, $keyClass);
     }
   }
 }

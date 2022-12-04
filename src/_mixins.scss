@@ -1,0 +1,7 @@
+@mixin generate-breakpoints() {
+  @each $key, $size in $breakpoints {
+    @media screen and (min-width: $size) {
+      @content;
+    }
+  }
+}
