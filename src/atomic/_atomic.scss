@@ -1,6 +1,5 @@
 @import './classes';
 @import './globals';
-@import './mixins';
 
 @each $keyClass, $ValueClass in $classes {
   $prefix: map-get($ValueClass, 'prefix');
@@ -8,8 +7,6 @@
   $has-media-query: map-get($ValueClass, 'has-media-query');
   @include generate-classes($props, $prefix, $keyClass);
   @if ($has-media-query) {
-    @include generate-breakpoints {
-      @include generate-classes($props, $prefix, $keyClass);
-    }
+    @include generate-breakpoints($props, $prefix, $keyClass);
   }
 }
