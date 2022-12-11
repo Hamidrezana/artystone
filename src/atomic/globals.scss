@@ -15,13 +15,4 @@
 
 .hidden-scrollbar {
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: block;
-  }
-  &::-webkit-scrollbar {
-    display: block;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }

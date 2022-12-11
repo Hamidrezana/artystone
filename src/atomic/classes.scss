@@ -110,7 +110,10 @@ $classes: (
   ),
   'flex-grow': (
     'has-media-query': true,
-    'prefix': 'f-grow',
+    'prefix': (
+      f-grow,
+      grow,
+    ),
     'props': (
       initial,
       inherit,
@@ -122,7 +125,10 @@ $classes: (
   ),
   'flex-shrink': (
     'has-media-query': true,
-    'prefix': 'f-shrink',
+    'prefix': (
+      f-shrink,
+      shrink,
+    ),
     'props': (
       initial,
       inherit,
@@ -134,7 +140,10 @@ $classes: (
   ),
   'flex-wrap': (
     'has-media-query': true,
-    'prefix': 'f-wrap',
+    'prefix': (
+      f-wrap,
+      wrap,
+    ),
     'props': (
       nowrap,
       wrap,
@@ -145,6 +154,18 @@ $classes: (
   ),
   'position': (
     'prefix': 'pos',
+    'props': (
+      absolute,
+      relative,
+      fixed,
+      static,
+      sticky,
+      initial,
+      inherit,
+      unset,
+    ),
+  ),
+  'position': (
     'props': (
       absolute,
       relative,
@@ -266,7 +287,7 @@ $classes: (
     ),
   ),
   'z-index': (
-    'prefix': 'zIndex',
+    'prefix': 'z-index',
     'has-media-query': true,
     'props': (
       0,
