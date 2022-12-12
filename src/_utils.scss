@@ -1,3 +1,28 @@
 @function is-list($var) {
   @return type-of($var) == 'list';
 }
+
+@function str-split($string, $separator) {
+  $split-arr: ();
+  $index: str-index($string, $separator);
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $split-arr: append($split-arr, $item);
+    $string: str-slice($string, $index + 1);
+    $index: str-index($string, $separator);
+  }
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+@function generate-class-name($label, $prefix: null, $postfix: null) {
+  $class-name: #{$label};
+  @if $prefix {
+    $class-name: #{$prefix}-#{$class-name};
+  }
+  @if $postfix {
+    $class-name: #{$class-name}-#{$postfix};
+  }
+  @return '.#{$class-name}';
+}

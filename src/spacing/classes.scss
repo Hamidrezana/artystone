@@ -1,0 +1,56 @@
+$spacingClasses: (
+  'margin-left': (
+    'prefix': 'ml',
+  ),
+  'margin-right': (
+    'prefix': 'mr',
+  ),
+  'margin-top': (
+    'prefix': 'mt',
+  ),
+  'margin-bottom': (
+    'prefix': 'mb',
+  ),
+  'padding-left': (
+    'prefix': 'pl',
+  ),
+  'padding-right': (
+    'prefix': 'pr',
+  ),
+  'padding-top': (
+    'prefix': 'pt',
+  ),
+  'padding-bottom': (
+    'prefix': 'pb',
+  ),
+  'padding': (
+    'prefix': 'p',
+  ),
+  'margin': (
+    'prefix': 'm',
+  ),
+  'padding-left, padding-right': (
+    'prefix': 'px',
+  ),
+  'margin-left, margin-right': (
+    'prefix': 'mx',
+  ),
+  'padding-top, padding-bottom': (
+    'prefix': 'py',
+  ),
+  'margin-top, margin-bottom': (
+    'prefix': 'my',
+  ),
+  'margin-inline-start': (
+    'prefix': 'ms',
+  ),
+  'margin-inline-end': (
+    'prefix': 'me',
+  ),
+  'padding-inline-start': (
+    'prefix': 'ps',
+  ),
+  'padding-inline-end': (
+    'prefix': 'pe',
+  ),
+);

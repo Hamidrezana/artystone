@@ -165,18 +165,18 @@ $classes: (
       unset,
     ),
   ),
-  'position': (
-    'props': (
-      absolute,
-      relative,
-      fixed,
-      static,
-      sticky,
-      initial,
-      inherit,
-      unset,
-    ),
-  ),
+  // 'position': (
+  //   'props': (
+  //     absolute,
+  //     relative,
+  //     fixed,
+  //     static,
+  //     sticky,
+  //     initial,
+  //     inherit,
+  //     unset,
+  //   ),
+  // ),
   'flex': (
     'prefix': 'flex',
     'has-media-query': true,
