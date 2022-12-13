@@ -1,7 +1,7 @@
 @import './classes';
 
-@each $keyClass, $valueClass in $spacingClasses {
-  $prefix: map-get($valueClass, 'prefix');
+@each $key-class, $value-class in $spacing-classes {
+  $prefix: map-get($value-class, 'prefix');
   $props: ();
   @for $i from 0 through 40 {
     $props: map-merge(
@@ -11,6 +11,6 @@
       ),
     );
   }
-  @include generate-classes($props, $prefix, $keyClass);
-  @include generate-breakpoints($props, $prefix, $keyClass);
+  @include generate-classes($props, $prefix, $key-class);
+  @include generate-breakpoints($props, $prefix, $key-class);
 }

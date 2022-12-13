@@ -1,12 +1,12 @@
 @import './classes';
 @import './globals';
 
-@each $keyClass, $valueClass in $classes {
-  $prefix: map-get($valueClass, 'prefix');
-  $props: map-get($valueClass, 'props');
-  $hasMediaQuery: map-get($valueClass, 'hasMediaQuery');
-  @include generate-classes($props, $prefix, $keyClass);
-  @if ($hasMediaQuery) {
-    @include generate-breakpoints($props, $prefix, $keyClass);
+@each $key-class, $value-class in $classes {
+  $prefix: map-get($value-class, 'prefix');
+  $props: map-get($value-class, 'props');
+  $has-media-query: map-get($value-class, 'has-media-query');
+  @include generate-classes($props, $prefix, $key-class);
+  @if ($has-media-query) {
+    @include generate-breakpoints($props, $prefix, $key-class);
   }
 }
