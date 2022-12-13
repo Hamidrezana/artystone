@@ -1,36 +1,36 @@
-@mixin generate-style-properties($styles, $style-value) {
-  $styles-list: str-split($styles, ', ');
-  @each $label, $value in $styles-list {
-    #{$label}: $style-value;
+@mixin generate-style-properties($styles, $styleValue) {
+  $stylesList: str-split($styles, ', ');
+  @each $label, $value in $stylesList {
+    #{$label}: $styleValue;
   }
 }
 
-@mixin generate-styles($props, $prefix, $style-key) {
+@mixin generate-styles($props, $prefix, $styleKey) {
   @each $label, $value in $props {
     #{generate-class-name($label, $prefix)} {
       @if $value {
-        @include generate-style-properties($style-key, $value);
+        @include generate-style-properties($styleKey, $value);
       } @else {
-        @include generate-style-properties($style-key, $label);
+        @include generate-style-properties($styleKey, $label);
       }
     }
   }
 }
 
-@mixin generate-classes($props, $prefix, $keyClass) {
+@mixin generate-classes($props, $prefix, $styleKey) {
   @if (is-list($prefix)) {
-    @each $prefix-label in $prefix {
-      @include generate-styles($props, $prefix-label, $keyClass);
+    @each $p in $prefix {
+      @include generate-styles($props, $p, $styleKey);
     }
   } @else {
-    @include generate-styles($props, $prefix, $keyClass);
+    @include generate-styles($props, $prefix, $styleKey);
   }
 }
 
-@mixin generate-breakpoints($props, $prefix, $keyClass) {
+@mixin generate-breakpoints($props, $prefix, $styleKey) {
   @each $key, $size in $breakpoints {
     @media screen and (min-width: $size) {
-      @include generate-classes($props, #{#{$prefix}-#{$key}}, $keyClass);
+      @include generate-classes($props, #{#{$prefix}-#{$key}}, $styleKey);
     }
   }
 }

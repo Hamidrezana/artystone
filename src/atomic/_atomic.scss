@@ -4,9 +4,9 @@
 @each $keyClass, $valueClass in $classes {
   $prefix: map-get($valueClass, 'prefix');
   $props: map-get($valueClass, 'props');
-  $has-media-query: map-get($valueClass, 'has-media-query');
+  $hasMediaQuery: map-get($valueClass, 'hasMediaQuery');
   @include generate-classes($props, $prefix, $keyClass);
-  @if ($has-media-query) {
+  @if ($hasMediaQuery) {
     @include generate-breakpoints($props, $prefix, $keyClass);
   }
 }

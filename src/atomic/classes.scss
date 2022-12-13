@@ -1,6 +1,6 @@
 $classes: (
   'display': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'd',
     'props': (
       block,
@@ -16,7 +16,7 @@ $classes: (
     ),
   ),
   'text-align': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'text',
     'props': (
       left,
@@ -27,7 +27,7 @@ $classes: (
     ),
   ),
   'justify-content': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'justify',
     'props': (
       'center': center,
@@ -39,7 +39,7 @@ $classes: (
     ),
   ),
   'align-items': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': (
       align-items,
       align,
@@ -55,7 +55,7 @@ $classes: (
     ),
   ),
   'justify-items': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'justify-items',
     'props': (
       'center': center,
@@ -67,7 +67,7 @@ $classes: (
     ),
   ),
   'align-content': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'align-content',
     'props': (
       'center': center,
@@ -79,7 +79,7 @@ $classes: (
     ),
   ),
   'align-self': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'align-self',
     'props': (
       'center': center,
@@ -88,7 +88,7 @@ $classes: (
     ),
   ),
   'flex-basis': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'f-basis',
     'props': (
       auto,
@@ -97,7 +97,7 @@ $classes: (
     ),
   ),
   'flex-direction': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': 'flex',
     'props': (
       row,
@@ -109,7 +109,7 @@ $classes: (
     ),
   ),
   'flex-grow': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': (
       f-grow,
       grow,
@@ -124,7 +124,7 @@ $classes: (
     ),
   ),
   'flex-shrink': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': (
       f-shrink,
       shrink,
@@ -139,7 +139,7 @@ $classes: (
     ),
   ),
   'flex-wrap': (
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'prefix': (
       f-wrap,
       wrap,
@@ -179,7 +179,7 @@ $classes: (
   // ),
   'flex': (
     'prefix': 'flex',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       0,
       1,
@@ -193,7 +193,7 @@ $classes: (
   ),
   'order': (
     'prefix': 'order',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       1,
       2,
@@ -204,7 +204,7 @@ $classes: (
   ),
   'border-radius': (
     'prefix': 'radius',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       'none': 0,
       'sm': 5px,
@@ -216,7 +216,7 @@ $classes: (
   ),
   'width': (
     'prefix': 'w',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       '50': 50%,
       '100': 100%,
@@ -240,7 +240,7 @@ $classes: (
   ),
   'height': (
     'prefix': 'h',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       '50': 50%,
       '100': 100%,
@@ -253,7 +253,7 @@ $classes: (
   ),
   'overflow': (
     'prefix': 'overflow',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       hidden,
       scroll,
@@ -262,7 +262,7 @@ $classes: (
   ),
   'overflow-y': (
     'prefix': 'overflow-y',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       hidden,
       scroll,
@@ -271,7 +271,7 @@ $classes: (
   ),
   'overflow-x': (
     'prefix': 'overflow-x',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       hidden,
       scroll,
@@ -281,14 +281,14 @@ $classes: (
   ),
   'white-space': (
     'prefix': 'white-space',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       nowrap,
     ),
   ),
   'z-index': (
     'prefix': 'z-index',
-    'has-media-query': true,
+    'hasMediaQuery': true,
     'props': (
       0,
       1,
