@@ -1,6 +1,31 @@
 // breakpoints
-$breakpoint-sm: 640px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1280px;
-$breakpoint-xxl: 1536px;
+$breakpoint-sm: 640px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1024px !default;
+$breakpoint-xl: 1280px !default;
+$breakpoint-xxl: 1536px !default;
+
+// border-radius
+$radius-sm: 4px !default;
+$radius-md: 8px !default;
+$radius-lg: 16px !default;
+$radius-xl: 20px !default;
+$radius-xxl: 28px !default;
+
+// grid
+$grid-gutter-width: 1rem !default;
+$grid-gutter-height: 1rem !default;
+$grid-include-column-box-sizing: true !default;
+$grid-variable-prefix: g- !default;
+$grid-columns: 12 !default;
+$grid-row-columns: 6 !default;
+$grid-spacer: 1rem !default;
+$grid-spacers: (
+  0: 0,
+  1: $grid-spacer * 0.25,
+  2: $grid-spacer * 0.5,
+  3: $grid-spacer,
+  4: $grid-spacer * 1.5,
+  5: $grid-spacer * 3,
+) !default;
+$grid-gutters: $grid-spacers;

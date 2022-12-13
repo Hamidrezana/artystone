@@ -10,18 +10,18 @@
 }
 
 @mixin make-row($gutter-w: $grid-gutter-width, $gutter-h: $grid-gutter-height) {
-  --#{$variable-prefix}gutter-x: #{$gutter-w};
-  --#{$variable-prefix}gutter-y: #{$gutter-h};
+  --#{$grid-variable-prefix}gutter-x: #{$gutter-w};
+  --#{$grid-variable-prefix}gutter-y: #{$gutter-h};
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--#{$variable-prefix}gutter-y));
-  margin-right: calc(-0.5 * var(--#{$variable-prefix}gutter-x));
-  margin-left: calc(-0.5 * var(--#{$variable-prefix}gutter-x));
+  margin-top: calc(-1 * var(--#{$grid-variable-prefix}gutter-y));
+  margin-right: calc(-0.5 * var(--#{$grid-variable-prefix}gutter-x));
+  margin-left: calc(-0.5 * var(--#{$grid-variable-prefix}gutter-x));
 }
 
 @mixin make-col-ready($gutter: $grid-gutter-width) {
   box-sizing: if(
-    variable-exists(include-column-box-sizing) and $include-column-box-sizing,
+    variable-exists(grid-include-column-box-sizing) and $grid-include-column-box-sizing,
     border-box,
     null
   );
@@ -29,9 +29,9 @@
   width: 100%;
   max-width: 100%;
 
-  padding-right: calc(var(--#{$variable-prefix}gutter-x) * 0.5);
-  padding-left: calc(var(--#{$variable-prefix}gutter-x) * 0.5);
-  margin-top: var(--#{$variable-prefix}gutter-y);
+  padding-right: calc(var(--#{$grid-variable-prefix}gutter-x) * 0.5);
+  padding-left: calc(var(--#{$grid-variable-prefix}gutter-x) * 0.5);
+  margin-top: var(--#{$grid-variable-prefix}gutter-y);
 }
 
 @mixin make-col-auto() {
@@ -106,15 +106,15 @@
         }
       }
 
-      @each $key, $value in $gutters {
+      @each $key, $value in $grid-gutters {
         .g#{$infix}-#{$key},
         .gx#{$infix}-#{$key} {
-          --#{$variable-prefix}gutter-x: #{$value};
+          --#{$grid-variable-prefix}gutter-x: #{$value};
         }
 
         .g#{$infix}-#{$key},
         .gy#{$infix}-#{$key} {
-          --#{$variable-prefix}gutter-y: #{$value};
+          --#{$grid-variable-prefix}gutter-y: #{$value};
         }
       }
     }
