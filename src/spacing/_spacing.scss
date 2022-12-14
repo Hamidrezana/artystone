@@ -11,6 +11,12 @@
       ),
     );
   }
+  $props: map-merge(
+    $map1: $props,
+    $map2: (
+      auto: auto,
+    ),
+  );
   @include generate-classes($props, $prefix, $key-class);
   @include generate-breakpoints($props, $prefix, $key-class);
 }
