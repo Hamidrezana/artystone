@@ -5,9 +5,9 @@
   }
 }
 
-@mixin generate-styles($props, $prefix, $style-key) {
+@mixin generate-styles($props, $prefix, $style-key, $breakpoint-point-key: null) {
   @each $label, $value in $props {
-    #{generate-class-name($label, $prefix)} {
+    #{generate-class-name($label, $prefix, $breakpoint-point-key)} {
       @if $value {
         @include generate-style-properties($style-key, $value);
       } @else {
@@ -17,20 +17,20 @@
   }
 }
 
-@mixin generate-classes($props, $prefix, $style-key) {
+@mixin generate-classes($props, $prefix, $style-key, $breakpoint-point-key: null) {
   @if (is-list($prefix)) {
     @each $p in $prefix {
-      @include generate-styles($props, $p, $style-key);
+      @include generate-styles($props, $p, $style-key, $breakpoint-point-key);
     }
   } @else {
-    @include generate-styles($props, $prefix, $style-key);
+    @include generate-styles($props, $prefix, $style-key, $breakpoint-point-key);
   }
 }
 
 @mixin generate-breakpoints($props, $prefix, $style-key) {
   @each $key, $size in $breakpoints {
     @media screen and (min-width: $size) {
-      @include generate-classes($props, #{#{$prefix}-#{$key}}, $style-key);
+      @include generate-classes($props, $prefix, $style-key, $key);
     }
   }
 }

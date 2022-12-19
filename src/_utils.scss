@@ -16,8 +16,11 @@
   @return $split-arr;
 }
 
-@function generate-class-name($label, $prefix: null, $postfix: null) {
+@function generate-class-name($label, $prefix: null, $breakpoint-point-key: null, $postfix: null) {
   $class-name: #{$label};
+  @if $breakpoint-point-key {
+    $class-name: #{$breakpoint-point-key}-#{$class-name};
+  }
   @if $prefix {
     $class-name: #{$prefix}-#{$class-name};
   }
