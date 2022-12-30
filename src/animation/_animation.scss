@@ -29,6 +29,18 @@
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: 'scale(0.8) translate(-50%, -50%)';
+  }
+  50% {
+    transform: 'scale(1) translate(-50%, -50%)';
+  }
+  100% {
+    transform: 'scale(0.8) translate(-50%, -50%)';
+  }
+}
+
 .rotating-animation {
   animation: rotating 2s linear infinite;
 }
@@ -39,4 +51,8 @@
 
 .half-rotating-animation {
   animation: half-rotating 5s linear infinite;
+}
+
+.pulse-animation {
+  animation: pulse 2s linear infinite;
 }
